@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -10,9 +12,34 @@
    <children>
       <Pane layoutX="-2.0" layoutY="-5.0" prefHeight="400.0" prefWidth="603.0">
          <children>
-            <Label layoutX="14.0" layoutY="44.0" text="Label" />
-            <Label layoutX="14.0" layoutY="72.0" text="Label" />
-            <Label layoutX="14.0" layoutY="98.0" text="Label" />
+            <Label layoutX="99.0" layoutY="133.0" text="Num. Venta:" />
+            <Label layoutX="112.0" layoutY="175.0" text="Producto:" />
+            <MenuButton layoutX="199.0" layoutY="171.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="211.0" text="Buscar">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </MenuButton>
+            <MenuBar layoutX="15.0" layoutY="14.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <TextField layoutX="199.0" layoutY="129.0" prefHeight="25.0" prefWidth="211.0" />
          </children>
       </Pane>
    </children>
