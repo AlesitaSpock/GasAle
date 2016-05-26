@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import mx.edu.uaeh.alequiroz.gasolinera.modelo.DBHelper;
 
 public class Main extends Application {
 	
@@ -19,7 +20,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		this.stagePrincipal = primaryStage;
 		this.stagePrincipal.setTitle(NOMBRE_APLICACION);
-		
+		DBHelper.iniciarBaseDatos();
 		iniciarLayout();
 		
 		
