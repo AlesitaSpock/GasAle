@@ -11,7 +11,7 @@ import mx.edu.uaeh.alequiroz.gasolinera.modelo.DBHelper;
 
 public class Main extends Application {
 	
-	private static final String NOMBRE_APLICACION = "GASOLINERA"; 
+	private static final String NOMBRE_APLICACION = "GASOLINERA APAXCO"; 
 	
 	private Stage stagePrincipal;
 	private BorderPane layoutMenu;
