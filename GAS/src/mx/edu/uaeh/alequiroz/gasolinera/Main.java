@@ -28,7 +28,7 @@ public class Main extends Application {
 	private void iniciarLayout() {
 		try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("view/MenuLayout.fxml"));
+            loader.setLocation(Main.class.getResource("interfaz/MenuLayout.fxml"));
             layoutMenu = (BorderPane) loader.load();
 
             Scene scene = new Scene(layoutMenu);
@@ -37,6 +37,10 @@ public class Main extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
 	}
 
 }
