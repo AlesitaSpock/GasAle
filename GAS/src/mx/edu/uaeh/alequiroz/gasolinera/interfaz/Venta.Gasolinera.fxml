@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane layoutX="-2.0" layoutY="-5.0" prefHeight="400.0" prefWidth="603.0">
          <children>
@@ -20,26 +19,13 @@
                 <MenuItem mnemonicParsing="false" text="Action 2" />
               </items>
             </MenuButton>
-            <MenuBar layoutX="15.0" layoutY="14.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="File">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
             <TextField layoutX="199.0" layoutY="129.0" prefHeight="25.0" prefWidth="211.0" />
+            <Label layoutX="112.0" layoutY="215.0" text="Cantidad:" />
+            <Label layoutX="125.0" layoutY="251.0" text="Monto:" />
+            <TextField layoutX="199.0" layoutY="211.0" prefHeight="25.0" prefWidth="211.0" />
+            <TextField layoutX="199.0" layoutY="247.0" prefHeight="25.0" prefWidth="211.0" />
+            <Button layoutX="164.0" layoutY="330.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Cancelar" />
+            <Button layoutX="336.0" layoutY="330.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Cobrar" />
          </children>
       </Pane>
    </children>
