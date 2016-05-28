@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import mx.edu.uaeh.alequiroz.gasolinera.controlador.LoginGasolineraControlador;
 import mx.edu.uaeh.alequiroz.gasolinera.modelo.DBHelper;
 import mx.edu.uaeh.alequiroz.gasolinera.modelo.Usuario;
 
@@ -46,16 +47,23 @@ public class Main extends Application {
         }
 	}
 	
-	private void iniciarPantallaLogin() {
+	public void iniciarPantallaLogin() {
 		try {
 			FXMLLoader fxmLoader = new FXMLLoader();
 			fxmLoader.setLocation(Main.class.getResource("interfaz/Login.Gasolinera.fxml"));
 			AnchorPane loginPane = (AnchorPane)fxmLoader.load();
 			
 			layoutMenu.setCenter(loginPane);
+			
+			LoginGasolineraControlador controller = fxmLoader.getController();
+	        controller.setMain(this);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void iniciarPantallaVenta() {
+		//TODO: Ale pondrá código aqui!
 	}
 	
 	public static void main(String[] args) {
