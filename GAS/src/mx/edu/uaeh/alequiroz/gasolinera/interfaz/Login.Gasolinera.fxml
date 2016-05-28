@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.uaeh.alequiroz.gasolinera.controlador.LoginGasolineraControlador">
    <children>
-      <Pane layoutX="-3.0" layoutY="-6.0" prefHeight="406.0" prefWidth="610.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="-6.0">
+      <Pane layoutX="-3.0" layoutY="-6.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label layoutX="189.0" layoutY="260.0" text="Usuario        :" />
             <Label layoutX="189.0" layoutY="298.0" text="Contraseña  :" />
-            <PasswordField layoutX="273.0" layoutY="294.0" />
-            <TextField layoutX="273.0" layoutY="256.0" />
-            <Button layoutX="242.0" layoutY="346.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Entrar" />
+            <TextField fx:id="textFieldUsuario" layoutX="273.0" layoutY="256.0" />
+            <PasswordField fx:id="passwordField" layoutX="273.0" layoutY="294.0" />
+            <Button fx:id="botonLogin" layoutX="242.0" layoutY="346.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Entrar" />
             <ImageView fitHeight="197.0" fitWidth="276.0" layoutX="199.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../../../Desktop/PantallasGasolinera/PREVIOGAS.png" />
