@@ -63,8 +63,22 @@ public class Main extends Application {
 	}
 	
 	public void iniciarPantallaVenta() {
-		//TODO: Ale pondrá código aqui!
+		try {
+			FXMLLoader fxmLoader = new FXMLLoader();
+			fxmLoader.setLocation(Main.class.getResource("interfaz/Venta.Gasolinera.fxml"));
+			AnchorPane loginPane = (AnchorPane)fxmLoader.load();
+			
+			layoutMenu.setCenter(loginPane);
+			
+			LoginGasolineraControlador controller = fxmLoader.getController();
+	        controller.setMain(this);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
+		
+		
+		//TODO: Ale pondrá código aqui!
 	
 	public static void main(String[] args) {
 		launch(args);
