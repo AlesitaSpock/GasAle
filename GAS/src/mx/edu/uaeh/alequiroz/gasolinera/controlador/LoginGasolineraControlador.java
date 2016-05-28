@@ -30,6 +30,8 @@ public class LoginGasolineraControlador {
 			public void handle(ActionEvent event) {
 				System.out.println("usuario :" + textFieldUsuario.getText());
 				System.out.println("password :" + passwordField.getText());
+				//TODO: falta verificar al usuario
+				main.iniciarPantallaVenta();
 			}
 		});
 	}
