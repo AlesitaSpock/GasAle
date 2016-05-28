@@ -5,6 +5,7 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import mx.edu.uaeh.alequiroz.gasolinera.modelo.DBHelper;
@@ -15,7 +16,7 @@ public class Main extends Application {
 	
 	private Stage stagePrincipal;
 	private BorderPane layoutMenu;
-
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		this.stagePrincipal = primaryStage;
@@ -23,14 +24,14 @@ public class Main extends Application {
 		DBHelper.iniciarBaseDatos();
 		iniciarLayout();
 		
-		
+		iniciarPantallaLogin();
 	}
 
 	private void iniciarLayout() {
 		try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("interfaz/MenuLayout.fxml"));
-            layoutMenu = (BorderPane) loader.load();
+			FXMLLoader fxmLoader = new FXMLLoader();
+			fxmLoader.setLocation(Main.class.getResource("interfaz/MenuLayout.fxml"));
+            layoutMenu = (BorderPane) fxmLoader.load();
 
             Scene scene = new Scene(layoutMenu);
             stagePrincipal.setScene(scene);
@@ -38,6 +39,18 @@ public class Main extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+	}
+	
+	private void iniciarPantallaLogin() {
+		try {
+			FXMLLoader fxmLoader = new FXMLLoader();
+			fxmLoader.setLocation(Main.class.getResource("interfaz/Login.Gasolinera.fxml"));
+			AnchorPane loginPane = (AnchorPane)fxmLoader.load();
+			
+			layoutMenu.setCenter(loginPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void main(String[] args) {
