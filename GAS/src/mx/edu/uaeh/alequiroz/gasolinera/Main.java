@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import mx.edu.uaeh.alequiroz.gasolinera.controlador.LoginGasolineraControlador;
+import mx.edu.uaeh.alequiroz.gasolinera.controlador.VentaGasolineraControlador;
 import mx.edu.uaeh.alequiroz.gasolinera.modelo.DBHelper;
 import mx.edu.uaeh.alequiroz.gasolinera.modelo.Usuario;
 
@@ -68,8 +69,8 @@ public class Main extends Application {
 			
 			layoutMenu.setCenter(loginPane);
 			
-			LoginGasolineraControlador controller = fxmLoader.getController();
-	        controller.setMain(this);
+			VentaGasolineraControlador controller = fxmLoader.getController();
+	        //controller.setMain(this);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
