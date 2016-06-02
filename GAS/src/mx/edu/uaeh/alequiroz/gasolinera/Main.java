@@ -3,8 +3,6 @@ package mx.edu.uaeh.alequiroz.gasolinera;
 import java.io.IOException;
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -18,7 +16,7 @@ public class Main extends Application {
 	
 	private static final String NOMBRE_APLICACION = "GASOLINERA APAXCO"; 
 	
-	public ObservableList<Usuario> usuarios = FXCollections.observableArrayList();
+	public Usuario usuarioAutenticado;
 	
 	private Stage stagePrincipal;
 	private BorderPane layoutMenu;
@@ -76,16 +74,9 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-		
-		
-		//TODO: Ale pondrá código aqui!
 	
 	public static void main(String[] args) {
 		launch(args);
 	}
-	
-	public ObservableList<Usuario> getUsuarios() {
-        return usuarios;
-    }
 
 }

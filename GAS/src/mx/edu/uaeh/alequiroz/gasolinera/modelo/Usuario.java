@@ -1,58 +1,53 @@
 package mx.edu.uaeh.alequiroz.gasolinera.modelo;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
 public class Usuario {
 
-	private final IntegerProperty idUsuario;
-	private final StringProperty usuario;
-	private final StringProperty password;
-	private final IntegerProperty rol;
+	private Integer idUsuario;
+	private String usuario;
+	private String password;
+	private Integer rol;
 	
 	public Usuario() {
 		this(null, null, null, null);
 	}
 	
 	public Usuario(Integer idUsuario, String usuario, String password, Integer rol) {
-		this.idUsuario = new SimpleIntegerProperty(idUsuario);
-		this.usuario = new SimpleStringProperty(usuario);
-		this.password = new SimpleStringProperty(password);
-		this.rol = new SimpleIntegerProperty(rol);
+		this.idUsuario = idUsuario;
+		this.usuario = usuario;
+		this.password = password;
+		this.rol = rol;
 	}
 	
 	public Integer getId() {
-		return this.idUsuario.get();
+		return this.idUsuario;
 	}
 	
 	public void setId(Integer id) {
-		this.idUsuario.set(id);
+		this.idUsuario = id;
 	}
 	
 	public String getUsuario() {
-		return this.usuario.get();
+		return this.usuario;
 	}
 	
 	public void setUsuario(String usuario) {
-		this.usuario.set(usuario);
+		this.usuario = usuario;
 	}
 	
 	public String getPassword() {
-		return this.password.get();
+		return this.password;
 	}
 	
 	public void setPassword(String password) {
-		this.password.set(password);
+		this.password = password;
 	}
 	
 	public Integer getRol() {
-		return this.rol.get();
+		return this.rol;
 	}
 	
 	public void setRol(Integer rol) {
-		this.rol.set(rol);
+		this.rol = rol;
 	}
 	
 }

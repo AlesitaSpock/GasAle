@@ -2,6 +2,8 @@ package mx.edu.uaeh.alequiroz.gasolinera.modelo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class DBHelper {
@@ -34,6 +36,35 @@ public class DBHelper {
 		sql += "CREATE TABLE IF NOT EXISTS Venta (id_venta	INTEGER PRIMARY KEY AUTOINCREMENT, fk_usuario	INTEGER NOT NULL, importe	NUMERIC, fecha_venta	INTEGER, FOREIGN KEY(fk_usuario) REFERENCES Usuario(id_usuario));";
 		sql += "CREATE TABLE IF NOT EXISTS Venta_articulo (id_venta_articulo	INTEGER PRIMARY KEY AUTOINCREMENT, fk_venta	INTEGER, fk_inventario	INTEGER, cantidad	NUMERIC, subtotal	NUMERIC, FOREIGN KEY(fk_venta) REFERENCES Venta(id_venta), FOREIGN KEY(fk_inventario) REFERENCES Inventario(id_inventario));";
 		statement.executeUpdate(sql);
+		String insertUsuarios = "INSERT OR REPLACE INTO usuario (usuario, password, rol) VALUES ('ale.quiroz', 'ale123', 1);";
+		statement.executeUpdate(insertUsuarios);
 		cerrarBD();
+	}
+	
+	/**
+	 * Obtiene el objeto Usuario cuyo select haga match con usuario y password
+	 * @param usuario
+	 * @param password
+	 * @return objeto Usuario, o null si no existe
+	 */
+	public static Usuario obtenerUsuario(String usuario, String password) throws Exception {
+		Usuario objetoUsuario = null;
+		abrirBD();
+		String query = "SELECT id_usuario, usuario, password, rol FROM Usuario WHERE usuario = ? AND password = ?";
+		PreparedStatement statement = c.prepareStatement(query);
+		statement.setString(1, usuario);
+		statement.setString(2, password);
+		ResultSet resultado = statement.executeQuery();
+		while (resultado.next()) {
+			objetoUsuario = new Usuario();
+			objetoUsuario.setId(resultado.getInt("id_usuario"));
+			objetoUsuario.setUsuario(resultado.getString("usuario"));
+			objetoUsuario.setPassword(resultado.getString("password"));
+			objetoUsuario.setRol(resultado.getInt("rol"));
+			break;
+		}
+		resultado.close();
+		cerrarBD();
+		return objetoUsuario;
 	}
 }
