@@ -81,7 +81,7 @@ public class DBHelper {
 		ResultSet resultado = statement.executeQuery();
 		while (resultado.next()) {
 			Inventario item = new Inventario();
-			item.setIdInventario(resultado.getLong("id_inventario"));
+			item.setIdInventario(resultado.getInt("id_inventario"));
 			item.setNombre(resultado.getString("nombre"));
 			item.setPrecio(resultado.getDouble("precio"));
 			listaInventario.add(item);
@@ -104,6 +104,30 @@ public class DBHelper {
 		resultado.close();
 		cerrarBD();
 		return  numVenta + 1;
+	}
+	
+	public static void agregarVenta(Venta venta) throws Exception {
+		abrirBD();
+		String query = "INSERT INTO Venta(id_venta, fk_usuario, importe, fecha_venta) VALUES (?,?,?,?)";
+		PreparedStatement statement = c.prepareStatement(query);
+		statement.setInt(1, venta.getIdVenta());
+		statement.setInt(2, venta.getFkUsuario());
+		statement.setDouble(3, venta.getImporte());
+		statement.setLong(4, venta.getFechaVenta());
+		statement.executeUpdate();
+		cerrarBD();
+	}
+	
+	public static void agregarVentaArticulo(VentaArticulo ventaArticulo) throws Exception {
+		abrirBD();
+		String query = "INSERT INTO Venta_articulo(fk_venta, fk_inventario, cantidad, subtotal) VALUES (?,?,?,?)";
+		PreparedStatement statement = c.prepareStatement(query);
+		statement.setInt(1, ventaArticulo.getFkVenta());
+		statement.setInt(2, ventaArticulo.getFkInventario());
+		statement.setDouble(3, ventaArticulo.getCantidad());
+		statement.setDouble(4, ventaArticulo.getSubtotal());
+		statement.executeUpdate();
+		cerrarBD();
 	}
 	
 }

@@ -9,19 +9,16 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
+          <Menu mnemonicParsing="false" text="Menú">
+            <items>
+              <MenuItem fx:id="cerrarSesion" mnemonicParsing="false" text="Cerrar sesión" />
+                  <MenuItem fx:id="salir" mnemonicParsing="false" text="Salir" />
+            </items>
+          </Menu>
           <Menu mnemonicParsing="false" text="Ventas">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Inventario">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Reportes">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="nuevaVenta" mnemonicParsing="false" text="Nueva" />
+                  <MenuItem fx:id="consultarVenta" mnemonicParsing="false" text="Consultar" />
             </items>
           </Menu>
         </menus>

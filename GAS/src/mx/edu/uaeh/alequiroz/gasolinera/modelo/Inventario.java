@@ -2,17 +2,17 @@ package mx.edu.uaeh.alequiroz.gasolinera.modelo;
 
 public class Inventario {
 
-	private Long idInventario;
+	private Integer idInventario;
 	
 	private String nombre;
 	
 	private double precio;
 
-	public Long getIdInventario() {
+	public Integer getIdInventario() {
 		return idInventario;
 	}
 
-	public void setIdInventario(Long idInventario) {
+	public void setIdInventario(Integer idInventario) {
 		this.idInventario = idInventario;
 	}
 

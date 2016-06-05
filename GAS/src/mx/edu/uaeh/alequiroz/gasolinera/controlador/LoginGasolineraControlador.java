@@ -55,12 +55,12 @@ public class LoginGasolineraControlador {
 		try {
 			Usuario usuarioAutenticado = DBHelper.obtenerUsuario(cadenaUsuario, cadenaPassword);
 			if (usuarioAutenticado != null) {
-				main.usuarioAutenticado = usuarioAutenticado;
+				Main.usuarioAutenticado = usuarioAutenticado;
 				main.iniciarPantallaVenta();
 			} else {
 				new Alert(
 					AlertType.ERROR,
-					"El nombre de usuario o contraseña es incrrecto",
+					"El nombre de usuario o contraseÃ±a es incrrecto",
 					ButtonType.OK).showAndWait();
 			}
 		} catch (Exception e) {

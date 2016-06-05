@@ -14,7 +14,7 @@ public class RegistrarGasolineraControlador {
 	private TextField nombreUsuario;
 	
 	@FXML
-	private TextField contraseñaNueva;
+	private TextField contrasenaNueva;
 	
 	@FXML
 	private Button cancelarNuevo;
