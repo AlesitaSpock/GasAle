@@ -9,17 +9,10 @@
    <children>
       <Label layoutX="172.0" layoutY="133.0" text="Nombre:" />
       <Label layoutX="178.0" layoutY="172.0" text="Costo:" />
-      <Label layoutX="166.0" layoutY="263.0" text="Existencias:" />
-      <Label layoutX="174.0" layoutY="218.0" text="Medida:" />
+      <Label layoutX="166.0" layoutY="214.0" text="Existencias:" />
       <TextField fx:id="nombreProd" layoutX="264.0" layoutY="129.0" />
       <TextField fx:id="costoUnitario" layoutX="264.0" layoutY="168.0" />
-      <TextField fx:id="existencias" layoutX="264.0" layoutY="259.0" />
-      <MenuButton fx:id="unidadMedida" layoutX="264.0" layoutY="214.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Lts">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
-        </items>
-      </MenuButton>
+      <TextField fx:id="existencias" layoutX="264.0" layoutY="210.0" />
       <Button fx:id="cancelarReg" layoutX="120.0" layoutY="319.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Cancelar" />
       <Button fx:id="agregarReg" layoutX="359.0" layoutY="319.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Agregar" />
    </children>
