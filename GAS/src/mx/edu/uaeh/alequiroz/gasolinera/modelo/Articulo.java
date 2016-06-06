@@ -3,9 +3,7 @@ package mx.edu.uaeh.alequiroz.gasolinera.modelo;
 public class Articulo {
 
 	private double cantidad;
-	
 	private String descripcion;
-	
 	private double importe;
 
 	public double getCantidad() {

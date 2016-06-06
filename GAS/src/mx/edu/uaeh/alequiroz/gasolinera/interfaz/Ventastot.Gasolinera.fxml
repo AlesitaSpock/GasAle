@@ -5,10 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.uaeh.alequiroz.gasolinera.controlador.ConsultaVentaGasolineraControlador">
    <children>
-      <Label layoutX="187.0" layoutY="97.0" text="Buscar por:" />
-      <DatePicker fx:id="fecha" layoutX="260.0" layoutY="93.0" />
-      <VBox fx:id="listafecha" layoutX="29.0" layoutY="134.0" prefHeight="200.0" prefWidth="523.0" />
+      <Accordion fx:id="acordeonVentas" layoutX="75.0" layoutY="14.0" prefHeight="291.0" prefWidth="451.0" />
    </children>
 </AnchorPane>

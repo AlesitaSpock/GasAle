@@ -118,6 +118,61 @@ public class DBHelper {
 		cerrarBD();
 	}
 	
+	public static List<Venta> obtenerVentasPorUsuario(int idUsuario) {
+		List<Venta> listaVentas = new ArrayList<>();
+		abrirBD();
+		String query = "SELECT id_venta, fk_usuario, importe, fecha_venta FROM Venta WHERE fk_usuario = ?";
+		try {
+			PreparedStatement statement = c.prepareStatement(query);
+			statement.setInt(1, idUsuario);
+			ResultSet resultado = statement.executeQuery();
+			while (resultado.next()) {
+				Venta item = new Venta();
+				item.setIdVenta(resultado.getInt("id_venta"));
+				item.setFkUsuario(resultado.getInt("fk_usuario"));
+				item.setImporte(resultado.getDouble("importe"));
+				item.setFechaVenta(resultado.getLong("fecha_venta"));
+				listaVentas.add(item);
+			}
+			resultado.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		cerrarBD();
+
+		return listaVentas;
+	}
+	
+	public static List<Articulo> obtenerListadoArticulos(int idVenta) {
+		List<Articulo> listaArticulos = new ArrayList<>();
+		String query = "SELECT Venta_articulo.cantidad, Inventario.nombre, Venta_articulo.subtotal FROM Venta_articulo";
+		query += " JOIN Inventario on Inventario.id_inventario = Venta_articulo.fk_inventario ";
+		query += " WHERE Venta_articulo.fk_venta = ? ";
+		abrirBD();
+		
+		try {
+			PreparedStatement statement = c.prepareStatement(query);
+			statement.setInt(1, idVenta);
+			ResultSet resultado = statement.executeQuery();
+			
+			while (resultado.next()) {
+				Articulo item = new Articulo();
+				item.setCantidad(resultado.getDouble("cantidad"));
+				item.setDescripcion(resultado.getString("nombre"));
+				item.setImporte(resultado.getDouble("subtotal"));
+				listaArticulos.add(item);
+			}
+			resultado.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		cerrarBD();
+		
+		return listaArticulos;
+	}
+	
 	public static void agregarVentaArticulo(VentaArticulo ventaArticulo) throws Exception {
 		abrirBD();
 		String query = "INSERT INTO Venta_articulo(fk_venta, fk_inventario, cantidad, subtotal) VALUES (?,?,?,?)";
