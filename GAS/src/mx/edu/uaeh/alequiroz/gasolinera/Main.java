@@ -88,6 +88,21 @@ public class Main extends Application {
 		}
 	}
 	
+	public void iniciarPantallaRegistroUsuario() {
+		cargarFxml("interfaz/RegistrarUsuario.Gasolinera.fxml");
+	}
+	
+	private void cargarFxml(String nombreArchivo) {
+		try {
+			FXMLLoader fxmLoader = new FXMLLoader();
+			fxmLoader.setLocation(Main.class.getResource(nombreArchivo));
+			AnchorPane loginPane = (AnchorPane)fxmLoader.load();
+			layoutMenu.setCenter(loginPane);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static void main(String[] args) {
 		launch(args);
 	}

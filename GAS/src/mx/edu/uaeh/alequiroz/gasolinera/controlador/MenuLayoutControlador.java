@@ -22,6 +22,9 @@ public class MenuLayoutControlador {
 	private MenuItem nuevaVenta;
 	
 	@FXML
+	private MenuItem nuevoUsuario;
+	
+	@FXML
 	private void initialize() {
 		
 		cerrarSesion.setOnAction((ActionEvent e) -> {
@@ -35,6 +38,8 @@ public class MenuLayoutControlador {
 		consultarVenta.setOnAction((ActionEvent e) -> main.iniciarPantallaConsultaVenta());
 		
 		nuevaVenta.setOnAction((ActionEvent e) -> main.iniciarPantallaVenta());
+		
+		nuevoUsuario.setOnAction((ActionEvent e) -> main.iniciarPantallaRegistroUsuario());
 		
 		recalcularOpcionesMenu();
 	}

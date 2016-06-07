@@ -21,6 +21,11 @@
                   <MenuItem fx:id="consultarVenta" mnemonicParsing="false" text="Consultar" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Usuario">
+               <items>
+                  <MenuItem fx:id="nuevoUsuario" mnemonicParsing="false" text="Agregar Usuario" />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>
