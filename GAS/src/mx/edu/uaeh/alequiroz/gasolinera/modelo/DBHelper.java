@@ -196,4 +196,14 @@ public class DBHelper {
 		cerrarBD();
 	}
 	
+	public static void agregarInventario(Inventario inventario) throws Exception {
+		abrirBD();
+		String query = "INSERT INTO Inventario (nombre, precio) VALUES (?, ?)";
+		PreparedStatement statement = c.prepareStatement(query);
+		statement.setString(1, inventario.getNombre());
+		statement.setDouble(2, inventario.getPrecio());
+		statement.executeUpdate();
+		cerrarBD();
+	}
+	
 }

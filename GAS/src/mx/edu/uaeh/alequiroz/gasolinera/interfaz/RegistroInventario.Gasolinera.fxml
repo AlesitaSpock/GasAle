@@ -8,12 +8,9 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.uaeh.alequiroz.gasolinera.controlador.InventarioGasolineraControlador">
    <children>
       <Label layoutX="172.0" layoutY="133.0" text="Nombre:" />
-      <Label layoutX="178.0" layoutY="172.0" text="Costo:" />
-      <Label layoutX="166.0" layoutY="214.0" text="Existencias:" />
+      <Label layoutX="135.0" layoutY="173.0" text="Costo unitario:" />
       <TextField fx:id="nombreProd" layoutX="264.0" layoutY="129.0" />
       <TextField fx:id="costoUnitario" layoutX="264.0" layoutY="168.0" />
-      <TextField fx:id="existencias" layoutX="264.0" layoutY="210.0" />
-      <Button fx:id="cancelarReg" layoutX="120.0" layoutY="319.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Cancelar" />
-      <Button fx:id="agregarReg" layoutX="359.0" layoutY="319.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Agregar" />
+      <Button fx:id="botonAgregarRegistro" layoutX="359.0" layoutY="319.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Agregar" />
    </children>
 </AnchorPane>
