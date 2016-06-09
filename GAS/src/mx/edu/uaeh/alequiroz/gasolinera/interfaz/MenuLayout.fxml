@@ -29,6 +29,7 @@
             <Menu mnemonicParsing="false" text="Inventario">
                <items>
                   <MenuItem fx:id="agregarInventario" mnemonicParsing="false" text="Agregar artículos" />
+                  <MenuItem fx:id="catalogoArticulos" mnemonicParsing="false" text="Catálogo de artículos" />
                </items>
             </Menu>
         </menus>
