@@ -40,8 +40,8 @@ public class DBHelper {
 		statement.executeUpdate(sql);
 		String insertarUsuarios = "INSERT OR REPLACE INTO usuario (id_usuario, usuario, password, rol) VALUES (1, 'ale.quiroz', 'ale123', 1);";
 		statement.executeUpdate(insertarUsuarios);
-		String insertarProductos = "INSERT OR REPLACE INTO inventario (id_inventario, nombre, precio) VALUES (1, 'Magna', 10), (2, 'Premium', 14), (3, 'Anticongelante', 40), (4, 'Aceite', 80);";
-		statement.executeUpdate(insertarProductos);
+		//String insertarProductos = "INSERT OR REPLACE INTO inventario (id_inventario, nombre, precio) VALUES (1, 'Magna', 10), (2, 'Premium', 14), (3, 'Anticongelante', 40), (4, 'Aceite', 80);";
+		//statement.executeUpdate(insertarProductos);
 		cerrarBD();
 	}
 	
@@ -202,6 +202,26 @@ public class DBHelper {
 		PreparedStatement statement = c.prepareStatement(query);
 		statement.setString(1, inventario.getNombre());
 		statement.setDouble(2, inventario.getPrecio());
+		statement.executeUpdate();
+		cerrarBD();
+	}
+
+	public static void actualizarInventario(Inventario inventario) throws Exception {
+		abrirBD();
+		String query = "UPDATE Inventario SET nombre=?, precio=? WHERE id_inventario = ?";
+		PreparedStatement statement = c.prepareStatement(query);
+		statement.setString(1, inventario.getNombre());
+		statement.setDouble(2, inventario.getPrecio());
+		statement.setInt(3, inventario.getIdInventario());
+		statement.executeUpdate();
+		cerrarBD();
+	}
+
+	public static void eliminarInventario(Integer idInventario) throws Exception {
+		abrirBD();
+		String query = "DELETE FROM Inventario WHERE id_inventario = ?";
+		PreparedStatement statement = c.prepareStatement(query);
+		statement.setInt(1, idInventario);
 		statement.executeUpdate();
 		cerrarBD();
 	}

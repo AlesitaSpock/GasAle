@@ -22,7 +22,6 @@ public class InventarioGasolineraControlador {
 	
 	@FXML
 	private Button botonAgregarRegistro;
-	
 		
 	@FXML	
     private void initialize() {
