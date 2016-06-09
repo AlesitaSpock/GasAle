@@ -40,13 +40,6 @@ public class DBHelper {
 		statement.executeUpdate(sql);
 		String insertarUsuarios = "INSERT OR REPLACE INTO usuario (id_usuario, usuario, password, rol) VALUES (1, 'ale.quiroz', 'ale123', 1);";
 		statement.executeUpdate(insertarUsuarios);
-<<<<<<< HEAD
-		String insertarProductos = "INSERT OR REPLACE INTO inventario (id_inventario, nombre, precio) VALUES (1, 'Magna', 10), (2, 'Premium', 14), (3, 'Anticongelante', 40), (4, 'Aceite', 80)";
-		statement.executeUpdate(insertarProductos);
-=======
-		//String insertarProductos = "INSERT OR REPLACE INTO inventario (id_inventario, nombre, precio) VALUES (1, 'Magna', 10), (2, 'Premium', 14), (3, 'Anticongelante', 40), (4, 'Aceite', 80);";
-		//statement.executeUpdate(insertarProductos);
->>>>>>> branch 'master' of https://github.com/AlesitaSpock/GasAle.git
 		cerrarBD();
 	}
 	
