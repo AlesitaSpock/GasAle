@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.uaeh.alequiroz.gasolinera.controlador.RegistrarUsuarioControlador">
+   <children>
+      <Label layoutX="226.0" layoutY="71.0" text="REGISTAR NUEVO USUARIO" />
+      <Label layoutX="145.0" layoutY="133.0" text="Usuario:" />
+      <Label layoutX="71.0" layoutY="216.0" text="Confirmar contraseña:" />
+      <Button fx:id="botonAgregar" layoutX="383.0" layoutY="285.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Agregar" />
+      <Label layoutX="125.0" layoutY="171.0" text="Contraseña:" />
+      <TextField fx:id="textFieldUsuario" layoutX="217.0" layoutY="129.0" prefHeight="25.0" prefWidth="259.0" />
+      <PasswordField fx:id="password" layoutX="217.0" layoutY="167.0" prefHeight="25.0" prefWidth="259.0" />
+      <PasswordField fx:id="confirmarPassword" layoutX="217.0" layoutY="212.0" prefHeight="25.0" prefWidth="259.0" />
+   </children>
+</AnchorPane>

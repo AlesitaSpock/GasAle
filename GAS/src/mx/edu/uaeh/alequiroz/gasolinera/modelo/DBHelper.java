@@ -184,5 +184,26 @@ public class DBHelper {
 		statement.executeUpdate();
 		cerrarBD();
 	}
+
+	public static void agregarUsuario(Usuario usuarioRegistrar) throws Exception {
+		abrirBD();
+		String query = "INSERT INTO usuario (usuario, password, rol) VALUES (?, ?, ?)";
+		PreparedStatement statement = c.prepareStatement(query);
+		statement.setString(1, usuarioRegistrar.getUsuario());
+		statement.setString(2, usuarioRegistrar.getPassword());
+		statement.setInt(3, usuarioRegistrar.getRol());
+		statement.executeUpdate();
+		cerrarBD();
+	}
+	
+	public static void agregarInventario(Inventario inventario) throws Exception {
+		abrirBD();
+		String query = "INSERT INTO Inventario (nombre, precio) VALUES (?, ?)";
+		PreparedStatement statement = c.prepareStatement(query);
+		statement.setString(1, inventario.getNombre());
+		statement.setDouble(2, inventario.getPrecio());
+		statement.executeUpdate();
+		cerrarBD();
+	}
 	
 }

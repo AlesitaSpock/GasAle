@@ -7,6 +7,8 @@ public class Usuario {
 	private String password;
 	private Integer rol;
 	
+	public static final int ROL_ADMIN = 1;
+	
 	public Usuario() {
 		this(null, null, null, null);
 	}
