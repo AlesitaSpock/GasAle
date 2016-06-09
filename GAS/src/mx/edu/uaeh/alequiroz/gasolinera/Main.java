@@ -96,6 +96,11 @@ public class Main extends Application {
 		cargarFxml("interfaz/RegistroInventario.Gasolinera.fxml");
 	}
 	
+	public void iniciarPantallaListadoInventario() {
+		cargarFxml("interfaz/Inventario.Gasolinera.fxml");
+	}
+	
+	
 	private void cargarFxml(String nombreArchivo) {
 		try {
 			FXMLLoader fxmLoader = new FXMLLoader();

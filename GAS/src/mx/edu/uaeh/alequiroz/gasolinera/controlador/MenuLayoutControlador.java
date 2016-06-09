@@ -27,6 +27,9 @@ public class MenuLayoutControlador {
 	@FXML
 	private MenuItem agregarInventario;
 	
+	@FXML
+	private MenuItem catalogoArticulos;
+	
 	
 	@FXML
 	private void initialize() {
@@ -47,6 +50,8 @@ public class MenuLayoutControlador {
 		
 		agregarInventario.setOnAction((ActionEvent e) -> main.iniciarPantallaRegistroInventario());
 		
+		catalogoArticulos.setOnAction((ActionEvent e) -> main.iniciarPantallaListadoInventario());
+		
 		recalcularOpcionesMenu();
 	}
 	
@@ -55,6 +60,7 @@ public class MenuLayoutControlador {
 		nuevaVenta.setDisable(Main.usuarioAutenticado == null);
 		nuevoUsuario.setDisable(Main.usuarioAutenticado == null);
 		agregarInventario.setDisable(Main.usuarioAutenticado == null);
+		catalogoArticulos.setDisable(Main.usuarioAutenticado == null);
 	}
 	
 	public void setMain(Main main) {
